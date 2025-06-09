@@ -1,9 +1,9 @@
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
-
 
 public class cadastroVIEW extends javax.swing.JFrame {
 
@@ -169,6 +169,12 @@ public class cadastroVIEW extends javax.swing.JFrame {
         String nome = cadastroNome.getText();
         String valorTexto = cadastroValor.getText();
         String status = "A Venda"; // fixo
+
+        // Validação para campos vazios
+        if (nome.isEmpty() || valorTexto.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Por favor, preencha todos os campos antes de salvar.");
+            return; // interrompe o método
+        }
 
         try {
             int valor = Integer.parseInt(valorTexto);
