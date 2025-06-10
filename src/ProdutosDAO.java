@@ -27,7 +27,7 @@ public class ProdutosDAO {
         try {
             conn = new conectaDAO().connectDB(); // Conectando ao banco
 
-            String sql = "UPDATE produto SET status = ? WHERE id = ?";
+            String sql = "UPDATE produtos SET status = ? WHERE id = ?";
             prep = conn.prepareStatement(sql);
             prep.setString(1, "Vendido"); // Novo status
             prep.setInt(2, idProduto);    // ID do produto a ser vendido
@@ -56,7 +56,7 @@ public class ProdutosDAO {
         try {
             conn = new conectaDAO().connectDB();
 
-            String sql = "SELECT * FROM produto WHERE status = ?";
+            String sql = "SELECT * FROM produtos WHERE status = ?";
             prep = conn.prepareStatement(sql);
             prep.setString(1, "Vendido");
             resultset = prep.executeQuery();
