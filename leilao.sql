@@ -10,6 +10,8 @@ CREATE TABLE `produtos` (
   `status` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+SELECT * FROM  produtos;
+
 -- Inserção de dados
 INSERT INTO `produtos` (`id`, `nome`, `valor`, `status`) VALUES
 (2, 'PS4', 1500, 'Vendido'),
